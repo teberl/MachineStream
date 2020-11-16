@@ -38,11 +38,19 @@ Response:
 
 ### TODO's
 
+- Add unit-tests
 - POST Endpoint for starting stoping the Hosted Worker Service
 - Adjust get endpoints to the specs of the front-end team
-- Add tests
 - Replace with a real-database, currently sqlite
 - Error/Exception/Timeout handling
-- Secure the service (ipFilter, cors) ?
+- Security (ipFilter, cors)
 - Test the dockerfile
 - Monitor the system perfomance when running as hosted service
+
+### Problems encountered
+
+- Running a worker as a hosted service, i used the `dotnet new worker` template as a starting point.
+  But integrated it later into the Web API itself.
+- No Singleton in HostedServices only Scoped
+- Use the count property from websocket to receive the correct size of the byte array (deserialization errors, not valid json)
+- EntityFrame FOREIGN KEY Constrain with MachineInfo.Id
