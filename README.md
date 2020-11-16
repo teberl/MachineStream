@@ -45,3 +45,4 @@ Response:
 - Error/Exception/Timeout handling
 - Secure the service (ipFilter, cors) ?
 - Test the dockerfile
+- Monitor the system perfomance when running as hosted service
