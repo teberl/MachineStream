@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
-using MachineStream.Web.Data;
-using MachineStream.Web.Models;
 using MachineStream.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MachineStream.Web.Controllers
+namespace MachineStream.Web.MachineInfos
 {
     [ApiController]
     [Route("[controller]")]
