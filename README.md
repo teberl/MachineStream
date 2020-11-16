@@ -37,14 +37,14 @@ Response:
 
 ### TODO's
 
-- Add unit-tests
-- POST Endpoint for starting stoping the Hosted Worker Service
-- Adjust get endpoints to the specs of the front-end team
-- Replace with a real-database, currently sqlite
-- Error/Exception/Timeout handling
-- Security (ipFilter, cors)
+- **Add unit-tests**
 - Test the dockerfile
+- Replace with a real-database, currently sqlite
+- Security (ipFilter, cors)
+- Error/Exception/Timeout handling
+- POST Endpoint for starting stoping the Hosted Worker Service
 - Monitor the system perfomance when running as hosted service
+- Adjust get endpoints to the specs of the front-end team
 
 ### Problems encountered
 
