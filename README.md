@@ -10,7 +10,7 @@ dotnet ef database update
 
 ## Endpoint
 
-### GET /machine-info?status=running
+### GET /machine-info?status=[running, finished, idle, errored]
 
 Response:
 
