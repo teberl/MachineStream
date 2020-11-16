@@ -60,11 +60,11 @@ namespace MachineStream.Web.Clients
                 }
 
                 var machineEvent = DeserializeResponse(buffer, response.Count);
+                _logger.LogInformation("{Timestamp}: Received new event for machine:{Ids} => {Status}", DateTime.UtcNow, machineEvent.MachineInfo.Id, machineEvent.MachineInfo.Status);
+
                 _db.MachineEvents.Attach(machineEvent);
                 await _db.SaveChangesAsync();
-
-                // var machineIds = await _db.MachineEvents.Select(e => e.MachineInfo.MachineId).Distinct().ToListAsync();
-                // _logger.LogInformation("MachineIds: {Ids}", machineIds.ToString());
+                _logger.LogInformation("New event stored.");
             }
         }
 
