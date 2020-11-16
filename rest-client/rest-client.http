@@ -1,0 +1,5 @@
+@baseUrl=https://localhost:5001
+
+###
+# @name /machine-infos
+GET {{baseUrl}}/machine-infos?status=running
