@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MachineStream.Web.Data;
+using MachineStream.Web.MachineInfos;
 using MachineStream.Web.Models;
 
 namespace MachineStream.Web.Services
@@ -14,14 +15,11 @@ namespace MachineStream.Web.Services
             _db = db;
         }
 
-        public IEnumerable<MachineInfo> GetMachineInfos()
+        public IEnumerable<MachineInfo> GetMachineInfos(MachineInfosFilter filter)
         {
-            return _db.MachineEvents.Select(e => e.MachineInfo);
-        }
-
-        public IEnumerable<MachineInfo> GetMachineInfoByStatus(string status)
-        {
-            return _db.MachineEvents.Where(e => e.MachineInfo.Status == status).Select(e => e.MachineInfo);
+            return _db.MachineEvents
+                .Where(item => string.IsNullOrEmpty(filter.Status) || filter.Status == item.MachineInfo.Status)
+                .Select(item => item.MachineInfo);
         }
     }
 }

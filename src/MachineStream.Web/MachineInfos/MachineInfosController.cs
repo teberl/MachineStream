@@ -18,13 +18,11 @@ namespace MachineStream.Web.MachineInfos
         [HttpGet]
         [Route("/machine-infos")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        public ActionResult<MachineInfosResponse> Get(string status)
+        public ActionResult<MachineInfosResponse> Get([FromQuery] MachineInfosFilter filter)
         {
-            var result = string.IsNullOrEmpty(status)
-                ? _machineEventsService.GetMachineInfos()
-                : _machineEventsService.GetMachineInfoByStatus(status);
+            var result = _machineEventsService.GetMachineInfos(filter)?.ToArray();
 
-            return new MachineInfosResponse { Items = result.ToList() };
+            return new MachineInfosResponse(result);
         }
     }
 }
